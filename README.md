@@ -1,8 +1,18 @@
 # A Scoping Review of Study Designs, Integration Methods, Reporting Quality and Reproducibility in Multi-Omics Analysis of *In Vitro* Microbiome Systems
 
-This repository contains the R code for the analyses of the 102 studies included in the scoping review. It uses the study-level data in Supplementary Appendix 2 to reproduce manuscript Figures 3–7, Supplementary Figures 1–3, and Supplementary Tables S1–S16.
+This repository contains the R code for the analyses of the 102 studies included in the scoping review. The Figure 2 script reproduces the PRISMA study selection diagram from screening counts recorded in the script. The remaining analyses use the study-level data in Supplementary Appendix 2 to reproduce manuscript Figures 3–7, Supplementary Figures 1–3, and Supplementary Tables S1–S16.
 
-## Download the study data
+## Reproduce Figure 2
+
+From the repository root, run the [PRISMA flow diagram script](R/reproduce_PRISMA.R):
+
+```sh
+Rscript R/reproduce_PRISMA.R
+```
+
+Figure 2 runs independently of Supplementary Appendix 2. The script installs any missing R packages (`PRISMA2020`, `DiagrammeRsvg`, `xml2`, and `rsvg`) and writes a single vector PDF to `PRISMA_output/Fig2.pdf`.
+
+## Download the study data for Figures 3–7 and the supplementary analyses
 
 Download **Supplementary Appendix 2** (Excel workbook) from the article’s supplementary materials. Save it in the repository’s [data folder](data/) so the path from the repository root is:
 
@@ -12,7 +22,7 @@ data/Supplementary Appendix 2.xlsx
 
 The filename `Supplementary_Appendix_2.xlsx` is also accepted. Keep the `Data Extraction` worksheet and its two header rows intact. The workbook also contains the codebook and abbreviations.
 
-## Run the analysis
+## Run the study-level analyses
 
 1. Install the required packages once in R.
 
